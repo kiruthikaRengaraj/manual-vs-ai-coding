@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual vs AI-Assisted Coding | Comparative Analysis</title>
+  <meta name="description" content="An interactive, colourful, beginner-friendly mini project comparing manual coding with AI-assisted coding in software development." />
+  <!-- Local Chart.js (works fully offline). A CDN fallback is added only if the local file is missing. -->
+  <script src="assets/chart.umd.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Manual <b>vs</b> AI Coding</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#compare">Live Comparison</a>
+        <a href="#playground">Playground</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#proscons">Pros &amp; Cons</a>
+        <a href="#conclusion">Result</a>
+        <a href="#about">About Project</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= SECTION A: HOME DASHBOARD ================= -->
+    <section class="hero" id="home">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">College Computer Science Mini Project &middot; 100% Offline &middot; No API Keys Needed</p>
+        <h1 class="hero-title">Comparative Analysis of <span class="grad-text">Manual Coding</span> vs <span class="grad-text-2">AI-Assisted Coding</span> in Software Development</h1>
+        <p class="hero-subtitle">See how traditional manual coding compares with AI-assisted coding through simple Python examples, an interactive playground, and colourful comparison charts.</p>
+
+        <p class="animated-heading" data-tip="Slow & steady wins the race - but smart tools help too!">Code Smarter. Develop Faster. Learn Better.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-manual" href="#compare">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6-6-6M12 19h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Explore Manual Coding
+          </a>
+          <a class="btn btn-ai" href="#compare">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" fill="currentColor"/></svg>
+            Explore AI-Assisted Coding
+          </a>
+        </div>
+
+        <!-- Animated counters -->
+        <div class="counters">
+          <div class="counter-card glass">
+            <span class="counter-num" data-target="6" data-suffix="">0</span>
+            <span class="counter-label">Interactive Demos</span>
+          </div>
+          <div class="counter-card glass">
+            <span class="counter-num" data-target="100" data-suffix="%">0</span>
+            <span class="counter-label">Offline &amp; Free</span>
+          </div>
+          <div class="counter-card glass">
+            <span class="counter-num" data-target="2" data-suffix="">0</span>
+            <span class="counter-label">Methods Compared</span>
+          </div>
+        </div>
+
+        <div class="hero-cards">
+          <article class="compare-card card-manual glass">
+            <div class="card-head">
+              <span class="card-tag tag-manual">MANUAL</span>
+              <h3>Manual Coding</h3>
+            </div>
+            <p>The developer writes every line by hand, using their own knowledge and logical thinking.</p>
+            <ul class="tick-list">
+              <li>Write code manually</li>
+              <li>Debug errors manually</li>
+              <li>Test the program</li>
+              <li>Improve code step by step</li>
+            </ul>
+          </article>
+
+          <article class="compare-card card-ai glass">
+            <div class="card-head">
+              <span class="card-tag tag-ai">AI-ASSISTED</span>
+              <h3>AI-Assisted Coding</h3>
+            </div>
+            <p>The developer works together with an AI coding tool that suggests code, explains logic and flags bugs.</p>
+            <ul class="tick-list">
+              <li>Generate code suggestions</li>
+              <li>Explain programming logic</li>
+              <li>Suggest error corrections</li>
+              <li>Assist with testing and optimization</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION B: LIVE CODING COMPARISON ================= -->
+    <section class="section" id="compare">
+      <div class="section-head">
+        <span class="section-kicker">SECTION B</span>
+        <h2>Live Coding Comparison</h2>
+        <p>The same task, written two ways. Task: <strong>check whether a number is even or odd</strong>. Both programs print the same result: <strong class="pill">Even Number</strong>.</p>
+      </div>
+
+      <div class="compare-grid">
+        <article class="code-card glass">
+          <div class="code-card-top">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="file-label">manual_even_odd.py</span>
+            <span class="tag-manual">MANUAL</span>
+          </div>
+          <pre class="code-editor"><code class="py-block">number = 10
+
+if number % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")</code></pre>
+          <dl class="fact-grid">
+            <div><dt>Programming logic</dt><dd>Direct conditional: checks if the remainder of <code>number / 2</code> is 0 and prints the answer immediately.</dd></div>
+            <div><dt>Coding steps</dt><dd>4 small steps (assign, check, two branches)</dd></div>
+            <div><dt>Readability</dt><dd class="scorebar"><span class="bar bar-manual" style="width:70%"></span> Good and simple</dd></div>
+            <div><dt>Output</dt><dd class="out ok">&gt; Even Number</dd></div>
+            <div><dt>Advantages</dt><dd>Extremely clear for beginners; easy to follow top to bottom.</dd></div>
+            <div><dt>Limitations</dt><dd>Logic stays inside the file - harder to reuse for other numbers.</dd></div>
+          </dl>
+        </article>
+
+        <article class="code-card glass">
+          <div class="code-card-top">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="file-label">ai_assisted_even_odd.py</span>
+            <span class="tag-ai">AI-ASSISTED</span>
+          </div>
+          <pre class="code-editor"><code class="py-block">def check_even_odd(number):
+    if number % 2 == 0:
+        return "Even Number"
+    return "Odd Number"
+
+print(check_even_odd(10))</code></pre>
+          <dl class="fact-grid">
+            <div><dt>Programming logic</dt><dd>Code is wrapped in a reusable function <code>check_even_odd()</code> that returns the answer before printing it.</dd></div>
+            <div><dt>Coding steps</dt><dd>3 logical steps (define function, return values, call + print)</dd></div>
+            <div><dt>Readability</dt><dd class="scorebar"><span class="bar bar-ai" style="width:85%"></span> Clean, reusable pattern</dd></div>
+            <div><dt>Output</dt><dd class="out ok">&gt; Even Number</dd></div>
+            <div><dt>Advantages</dt><dd>Reusable for any number; separates logic from display; easy to test.</dd></div>
+            <div><dt>Limitations</dt><dd>A beginner must understand functions before this version makes sense.</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="callout glass">
+        <span class="callout-icon" aria-hidden="true">i</span>
+        <p><strong>Important:</strong> Both versions are <strong>correct and valid</strong>. The AI-assisted example uses a reusable <em>function</em>, while the manual example uses <em>direct conditional logic</em>. The function version is <strong>not automatically faster or better</strong> in every situation - it shines when the same logic must be repeated or reused. Choosing between them depends on the task, the codebase, and the developer's goals.</p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION C: INTERACTIVE PLAYGROUND ================= -->
+    <section class="section" id="playground">
+      <div class="section-head">
+        <span class="section-kicker">SECTION C</span>
+        <h2>Interactive Coding Playground</h2>
+        <p>Pick a task, enter your own values, switch between <strong>Manual</strong> and <strong>AI-Assisted</strong> tabs, then run the example and see the output. Everything runs with safe JavaScript in your browser - Python is never executed.</p>
+      </div>
+
+      <div class="playground glass">
+        <div class="pg-top">
+          <div class="pg-tasks" id="taskButtons"></div>
+          <div class="pg-tabs" id="pgTabs">
+            <button class="tab-btn tab-manual active" data-tab="manual"
+                    data-tip="Writes the code by hand, line by line"><span class="tab-dot dot-manual"></span>Manual</button>
+            <button class="tab-btn tab-ai" data-tab="ai"
+                    data-tip="Simulated AI suggestion - no real AI model is connected"><span class="tab-dot dot-ai"></span>AI-Assisted</button>
+          </div>
+        </div>
+
+        <div class="pg-body">
+          <div class="pg-left">
+            <h4 id="pgTaskTitle">Even or Odd</h4>
+            <p class="pg-desc" id="pgDesc">Check whether a given number is even or odd.</p>
+
+            <div class="pg-inputs" id="pgInputs"></div>
+
+            <button class="btn btn-run" id="pgRun">
+              ▶ Run Example
+            </button>
+
+            <div class="pg-output-box" id="pgOutputBox">
+              <span class="out-title">Output</span>
+              <pre class="pg-output" id="pgOutput">&gt; (Run the example to see the output)</pre>
+            </div>
+          </div>
+
+          <div class="pg-right">
+            <div class="pg-code-wrap">
+              <div class="pg-code-head">
+                <span class="file-label" id="pgFileLabel">manual_example.py</span>
+                <span id="pgTag" class="tag-manual">MANUAL</span>
+              </div>
+              <pre class="code-editor tall"><code class="py-block" id="pgCode"></code></pre>
+            </div>
+            <div class="pg-notes" id="pgNotes">
+              <span class="note-label">Explanation</span>
+              <p id="pgNotesText">Click <b>AI-Assisted</b> above to see a simulated AI suggestion and its explanation.</p>
+            </div>
+            <p class="demo-note">Demo values are for illustration only. AI suggestions are pre-written examples simulating an AI assistant - a real AI model is <strong>not</strong> connected.</p>
+          </div>
+        </div>
+
+        <div class="pg-reset-row">
+          <button class="btn btn-ghost" id="pgReset">↺ Reset Playground</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION D: COMPARATIVE ANALYSIS DASHBOARD ================= -->
+    <section class="section" id="analysis">
+      <div class="section-head">
+        <span class="section-kicker">SECTION D</span>
+        <h2>Comparative Analysis Dashboard</h2>
+        <p>Six demonstration metrics compared side by side. Drag the sliders to experiment and press <strong>Reset Demo</strong> to restore the defaults. These are <strong>illustrative demo values, not results from a real experiment</strong>.</p>
+      </div>
+
+      <div class="analysis-tip text-tip glass" data-tip="Lower is better for these metrics!" id="lowerTip">
+        <p><strong>How to read this dashboard:</strong> For <span class="chip chip-down">Development time</span> and <span class="chip chip-down">Debugging effort</span>, <em>lower values are better</em>. For the other metrics, <em>higher ratings are better</em>.</p>
+      </div>
+
+      <div class="metric-panel glass">
+        <h3>Editable Demonstration Metrics</h3>
+        <div class="metric-sliders" id="metricSliders"></div>
+        <div class="metric-actions">
+          <button class="btn btn-ghost" id="resetMetrics">↺ Reset Demo</button>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card glass">
+          <h3>Animated Bar Chart</h3>
+          <div class="chart-wrap"><canvas id="barChart" aria-label="Bar chart comparing manual and AI-assisted coding metrics" role="img"></canvas></div>
+          <p class="chart-note">Bar chart shows the raw demo value (0-100) for each metric. For <em>Development time</em> and <em>Debugging effort</em> shorter bars are better (lower cost); for the rest, taller bars are better (higher quality).</p>
+        </div>
+        <div class="chart-card glass">
+          <h3>Radar Chart</h3>
+          <div class="chart-wrap"><canvas id="radarChart" aria-label="Radar chart of manual and AI-assisted coding performance scores" role="img"></canvas></div>
+          <p class="chart-note">The radar chart converts every metric into a <em>performance score out of 100 where higher is always better</em> (time and debugging effort are inverted). A larger blue-purple area means better AI-assist scores on this demo data.</p>
+        </div>
+      </div>
+
+      <div class="productivity-cards">
+        <div class="prod-card glass">
+          <span class="prod-icon icon-green" aria-hidden="true">↗</span>
+          <span class="prod-value"><span class="counter-num" id="cardTimeSaved">0</span>%</span>
+          <span class="prod-label">Time Saved (demo)</span>
+        </div>
+        <div class="prod-card glass">
+          <span class="prod-icon icon-violet" aria-hidden="true">★</span>
+          <span class="prod-value"><span class="counter-num" id="cardReadability">0</span> pts</span>
+          <span class="prod-label">Readability Gain (demo)</span>
+        </div>
+        <div class="prod-card glass">
+          <span class="prod-icon icon-cyan" aria-hidden="true">▲</span>
+          <span class="prod-value"><span class="counter-num" id="cardProductivity">0</span>%</span>
+          <span class="prod-label">Productivity Lift (demo)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION E: ADVANTAGES & LIMITATIONS ================= -->
+    <section class="section" id="proscons">
+      <div class="section-head">
+        <span class="section-kicker">SECTION E</span>
+        <h2>Advantages and Limitations</h2>
+        <p>Every tool has strengths and weaknesses. Understanding both sides helps developers choose the right approach.</p>
+      </div>
+
+      <div class="pc-grid">
+        <article class="pc-card glass">
+          <h3 class="pc-title-title"><span class="tag-manual">MANUAL CODING</span></h3>
+          <div class="pc-col">
+            <div class="pc-block pc-pro">
+              <h4><span class="pc-ic pc-pro-ic">✓</span> Advantages</h4>
+              <ul>
+                <li>Builds programming fundamentals</li>
+                <li>Improves logical thinking</li>
+                <li>Gives the developer direct control</li>
+                <li>Helps understand code deeply</li>
+              </ul>
+            </div>
+            <div class="pc-block pc-con">
+              <h4><span class="pc-ic pc-con-ic">✕</span> Limitations</h4>
+              <ul>
+                <li>Can take longer for repetitive tasks</li>
+                <li>Debugging can require significant effort</li>
+                <li>Beginners may struggle with errors</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="pc-card glass">
+          <h3 class="pc-title-title"><span class="tag-ai">AI-ASSISTED CODING</span></h3>
+          <div class="pc-col">
+            <div class="pc-block pc-pro">
+              <h4><span class="pc-ic pc-pro-ic">✓</span> Advantages</h4>
+              <ul>
+                <li>Can speed up routine coding tasks</li>
+                <li>Suggests alternative solutions</li>
+                <li>Explains unfamiliar code</li>
+                <li>Helps identify possible bugs</li>
+                <li>Supports learning and experimentation</li>
+              </ul>
+            </div>
+            <div class="pc-block pc-con">
+              <h4><span class="pc-ic pc-con-ic">✕</span> Limitations</h4>
+              <ul>
+                <li>May generate incorrect code</li>
+                <li>Requires verification and testing</li>
+                <li>Can introduce security vulnerabilities</li>
+                <li>Developers must understand the generated code</li>
+                <li>Quality depends on prompts and context</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= SECTION F: FINAL RESULT ================= -->
+    <section class="section" id="conclusion">
+      <div class="section-head">
+        <span class="section-kicker">SECTION F</span>
+        <h2>Final Result</h2>
+      </div>
+
+      <div class="final-panel glass">
+        <div class="final-vs">
+          <div class="vs-block vs-manual">
+            <span class="vs-big">MANUAL</span>
+            <span class="vs-small">foundation &amp; control</span>
+          </div>
+          <span class="vs-or">VS</span>
+          <div class="vs-block vs-ai">
+            <span class="vs-big">AI-ASSISTED</span>
+            <span class="vs-small">speed &amp; support</span>
+          </div>
+        </div>
+        <div class="final-quote">
+          <p>&ldquo;AI-assisted coding can improve developer productivity, accelerate repetitive tasks, and support debugging and learning. However, AI-generated code must be reviewed, tested, and validated by a human developer. The most effective approach is to combine AI assistance with strong programming fundamentals.&rdquo;</p>
+        </div>
+        <div class="final-bars" id="finalBars">
+          <div class="fbar-row">
+            <span>Manual coding</span>
+            <div class="fbar-track"><div class="fbar-fill bar-manual" style="width:40%">40</div></div>
+          </div>
+          <div class="fbar-row">
+            <span>AI-assisted coding</span>
+            <div class="fbar-track"><div class="fbar-fill bar-ai" style="width:86%">86</div></div>
+          </div>
+          <p class="chart-note">Final illustrative productivity index (demo values, 0-100 - higher is better).</p>
+        </div>
+        <button class="btn btn-ai" id="viewSummary">View Project Summary</button>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT / OBJECTIVES / FUTURE ================= -->
+    <section class="section" id="about">
+      <div class="section-head">
+        <span class="section-kicker">ABOUT</span>
+        <h2>About Project</h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card glass">
+          <h3>Objectives &amp; Scope</h3>
+          <p>This project demonstrates, with simple Python examples, how manual coding and AI-assisted coding compare across development time, debugging effort, readability, learning support, error detection and productivity. The scope is educational and visual: it simulates AI behaviour with pre-written examples and clearly labelled demo metrics. It does not collect real measurements and does not claim scientific proof.</p>
+        </article>
+        <article class="about-card glass">
+          <h3>How It Works</h3>
+          <p>A single-page website built with HTML5, CSS3, JavaScript and Chart.js. All programs (even/odd, sign check, largest of two, sum, leap year, factorial) are demonstrated with Python-style code and executed as safe JavaScript in the browser. The AI-assisted tab shows simulated suggestions so the app works fully offline with no API key.</p>
+        </article>
+        <article class="about-card glass">
+          <h3>Future Enhancements</h3>
+          <ul>
+            <li>Connect a real AI API for live generation (user-provided key)</li>
+            <li>Add sorting, searching and string-processing tasks</li>
+            <li>Compare multiple languages (C, Java, Python)</li>
+            <li>Add a quiz to test what the student learned</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p><strong>Comparative Analysis of Manual Coding vs AI-Assisted Coding in Software Development</strong></p>
+    <p>Student project - HTML5, CSS3, JavaScript &amp; Chart.js. Runs 100% offline in your browser. No real AI model is connected; demo data is for illustration only.</p>
+  </footer>
+
+  <!-- ================= SUMMARY MODAL ================= -->
+  <div class="modal" id="summaryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box glass">
+      <button class="modal-close" id="modalClose" aria-label="Close summary">&#10005;</button>
+      <h2 id="modalTitle">Project Summary</h2>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button class="btn btn-ai" id="downloadBtn">⬇ Download Summary as Text File</button>
+        <button class="btn btn-ghost" id="modalClose2">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
